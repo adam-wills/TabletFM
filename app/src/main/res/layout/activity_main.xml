@@ -1,0 +1,258 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.ece420.lab5.MainActivity">
+
+    <Button
+        android:id="@+id/capture_control_button"
+        android:layout_width="75dp"
+        android:layout_height="50dp"
+        android:onClick="onEchoClick"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="80dp"
+        android:text="@string/StartEcho" />
+
+    <TextView android:text="@string/init_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:lines="3"
+        android:id="@+id/statusView"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"/>
+
+    <com.jjoe64.graphview.GraphView
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="25dp"
+        android:layout_width="500dp"
+        android:layout_height="325dp"
+        android:id="@+id/AmpGraph" />
+
+    <SeekBar
+        android:id="@+id/AmpAttack"
+        android:layout_width="250dp"
+        android:layout_height="25dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="-100dp"
+        android:layout_marginBottom="150dp"
+        android:max="96000"
+        android:rotation="270"
+        android:rotationX="0"
+        android:rotationY="0" />
+
+    <SeekBar
+        android:id="@+id/AmpDecay"
+        android:layout_width="250dp"
+        android:layout_height="25dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="-25dp"
+        android:layout_marginBottom="150dp"
+        android:max="96000"
+        android:rotation="270"
+        android:rotationX="0"
+        android:rotationY="0" />
+
+    <SeekBar
+        android:id="@+id/AmpSustain"
+        android:layout_width="250dp"
+        android:layout_height="25dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginBottom="150dp"
+        android:max="100"
+        android:rotation="270"
+        android:rotationX="0"
+        android:rotationY="0" />
+
+    <SeekBar
+        android:id="@+id/AmpRelease"
+        android:layout_width="250dp"
+        android:layout_height="25dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="125dp"
+        android:layout_marginBottom="150dp"
+        android:max="240000"
+        android:rotation="270"
+        android:rotationX="0"
+        android:rotationY="0" />
+
+    <com.jjoe64.graphview.GraphView
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="5dp"
+        android:layout_marginTop="25dp"
+        android:layout_width="500dp"
+        android:layout_height="325dp"
+        android:id="@+id/ModGraph" />
+
+    <SeekBar
+        android:id="@+id/ModAttack"
+        android:layout_width="250dp"
+        android:layout_height="25dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="125dp"
+        android:layout_marginBottom="150dp"
+        android:max="96000"
+        android:rotation="270"
+        android:rotationX="0"
+        android:rotationY="0" />
+
+    <SeekBar
+        android:id="@+id/ModDecay"
+        android:layout_width="250dp"
+        android:layout_height="25dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="150dp"
+        android:max="96000"
+        android:rotation="270"
+        android:rotationX="0"
+        android:rotationY="0" />
+
+    <SeekBar
+        android:id="@+id/ModSustain"
+        android:layout_width="250dp"
+        android:layout_height="25dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="-25dp"
+        android:layout_marginBottom="150dp"
+        android:max="100"
+        android:rotation="270"
+        android:rotationX="0"
+        android:rotationY="0" />
+
+    <SeekBar
+        android:id="@+id/ModRelease"
+        android:layout_width="250dp"
+        android:layout_height="25dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="-100dp"
+        android:layout_marginBottom="150dp"
+        android:max="240000"
+        android:rotation="270"
+        android:rotationX="0"
+        android:rotationY="0" />
+
+    <TextView android:text="@string/ModFreqFactorPrompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:lines="3"
+        android:id="@+id/ModFreqFactorText"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="595dp"
+        android:layout_marginBottom="210dp"
+        android:textSize="16dp"/>
+
+    <EditText
+        android:id="@+id/ModFreqFactor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="825dp"
+        android:layout_marginBottom="235dp"
+        android:hint="0.0"
+        android:inputType="numberDecimal"/>
+
+    <TextView android:text="@string/ModIdxMaxPrompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:lines="3"
+        android:id="@+id/ModIdxMaxText"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="600dp"
+        android:layout_marginBottom="160dp"
+        android:textSize="16dp"/>
+
+    <EditText
+        android:id="@+id/ModIdxMax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="825dp"
+        android:layout_marginBottom="185dp"
+        android:hint="0.0"
+        android:inputType="numberDecimal"/>
+
+    <TextView android:text="@string/ModIdxMinPrompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:lines="3"
+        android:id="@+id/ModIdxMinText"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="600dp"
+        android:layout_marginBottom="110dp"
+        android:textSize="16dp"/>
+
+    <EditText
+        android:id="@+id/ModIdxMin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="825dp"
+        android:layout_marginBottom="135dp"
+        android:hint="0.0"
+        android:inputType="numberDecimal"/>
+
+    <TextView android:text="@string/AmpWavePrompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:lines="3"
+        android:id="@+id/AmpWaveText"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="335dp"
+        android:layout_marginBottom="210dp"
+        android:textSize="16dp"/>
+
+    <Spinner
+        android:id="@+id/AmpWaveSpinner"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="350dp"
+        android:layout_marginBottom="200dp"/>
+
+    <TextView android:text="@string/ModWavePrompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:lines="3"
+        android:id="@+id/ModWaveText"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="335dp"
+        android:layout_marginBottom="140dp"
+        android:textSize="16dp"/>
+
+    <Spinner
+        android:id="@+id/ModWaveSpinner"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="350dp"
+        android:layout_marginBottom="130dp"/>
+
+</RelativeLayout>
+
